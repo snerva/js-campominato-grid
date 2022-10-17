@@ -23,6 +23,7 @@ buttonEl.addEventListener('click', function(){
         const cellMarkup = `<div class="cell">${numb}</div>`;
         containerEl.innerHTML += cellMarkup;
         console.log(cellMarkup);
+        
     }
 
     let cellList = document.querySelectorAll('.cell');
@@ -31,8 +32,9 @@ buttonEl.addEventListener('click', function(){
         let currentCell = cellList[i];
         console.log(currentCell);
         currentCell.addEventListener('click', function(){
-            console.log(currentCell);
             currentCell.classList.toggle('light_blue');
+            const currentNumb = i+1;
+            console.log(currentNumb);
         })
     }
 
