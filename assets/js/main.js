@@ -16,28 +16,29 @@ const containerEl = document.querySelector('.container');
 
 buttonEl.addEventListener('click', function(){
     let cellsNumber = 100;
-
-    for (let i=0; i < cellsNumber; i++){
-        const numb = i + 1;
-        console.log(numb);
-        const cellMarkup = `<div class="cell">${numb}</div>`;
-        containerEl.innerHTML += cellMarkup;
-        console.log(cellMarkup);
-        
+    gridGenerator(cellsNumber, containerEl);
+    function gridGenerator(maxCellNumb, domEl){
+        for (let i=0; i < maxCellNumb; i++){
+            const numb = i + 1;
+            console.log(numb);
+            const cellMarkup = `<div class="cell">${numb}</div>`;
+            domEl.innerHTML += cellMarkup;
+            console.log(cellMarkup);        
+        }
     }
-
+    
     let cellList = document.querySelectorAll('.cell');
-
-    for (let i=0; i < cellList.length; i++){
-        let currentCell = cellList[i];
-        console.log(currentCell);
-        currentCell.addEventListener('click', function(){
-            currentCell.classList.toggle('light_blue');
-            const currentNumb = i+1;
-            console.log(currentNumb);
-        })
-    }
-
-
+    clickEvent(cellList)
+    function clickEvent(cellListEl){
+        for (let i=0; i < cellListEl.length; i++){
+            let currentCell = cellListEl[i];
+            console.log(currentCell);
+            currentCell.addEventListener('click', function(){
+                currentCell.classList.toggle('light_blue');
+                const currentNumb = i+1;
+                console.log(currentNumb);
+            })
+        }
+    }    
 })
 
