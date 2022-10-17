@@ -7,29 +7,35 @@
 //creare un bottone in dom, costante e ascolto
 //creare dentro bottone, griglia 10x10 con container in dom e costante
 //assegnare a ogni cella un numero progressivo
+//selezionare tutta la lista di cell e ascolto su singola cell cliccata
+//dare background color azzurro a cell cliccata
 
 const buttonEl = document.querySelector('button');
 const containerEl = document.querySelector('.container');
 
 
 buttonEl.addEventListener('click', function(){
-    
-    
     let cellsNumber = 100;
 
-    // gridGenerator(cellsNumber, cellEl, containerEl);
-    // function gridGenerator(cellsNumber, cellEl, containerEl){
-    //     for (let i=0; i < cellsNumber; i++){
-    //         containerEl.innerHTML += cellEl;
-    //     }
-    // }
     for (let i=0; i < cellsNumber; i++){
         const numb = i + 1;
         console.log(numb);
         const cellMarkup = `<div class="cell">${numb}</div>`;
         containerEl.innerHTML += cellMarkup;
         console.log(cellMarkup);
-        
     }
+
+    let cellList = document.querySelectorAll('.cell');
+
+    for (let i=0; i < cellList.length; i++){
+        let currentCell = cellList[i];
+        console.log(currentCell);
+        currentCell.addEventListener('click', function(){
+            console.log(currentCell);
+            currentCell.classList.toggle('light_blue');
+        })
+    }
+
+
 })
 
