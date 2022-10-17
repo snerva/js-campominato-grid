@@ -5,23 +5,31 @@
 */
 
 //creare un bottone in dom, costante e ascolto
-//creare dentro bottone griglia 10x10 con container in dom e costante
+//creare dentro bottone, griglia 10x10 con container in dom e costante
+//assegnare a ogni cella un numero progressivo
 
 const buttonEl = document.querySelector('button');
 const containerEl = document.querySelector('.container');
 
 
 buttonEl.addEventListener('click', function(){
-    const cellEl = '<div class="cell"></div>';
+    
     
     let cellsNumber = 100;
 
-    gridGenerator(cellsNumber, cellEl, containerEl);
-    function gridGenerator(cellsNumber, cellEl, containerEl){
-        for (let i=0; i < cellsNumber; i++){
-            containerEl.innerHTML += cellEl;
-        }
+    // gridGenerator(cellsNumber, cellEl, containerEl);
+    // function gridGenerator(cellsNumber, cellEl, containerEl){
+    //     for (let i=0; i < cellsNumber; i++){
+    //         containerEl.innerHTML += cellEl;
+    //     }
+    // }
+    for (let i=0; i < cellsNumber; i++){
+        const numb = i + 1;
+        console.log(numb);
+        const cellMarkup = `<div class="cell">${numb}</div>`;
+        containerEl.innerHTML += cellMarkup;
+        console.log(cellMarkup);
+        
     }
-
 })
 

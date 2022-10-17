@@ -26,4 +26,6 @@ button{
     width: calc(100% / 10);
     aspect-ratio: 1/1;
     border: 2px solid white;
+    color: white;
+    line-height: 120px;
 }
