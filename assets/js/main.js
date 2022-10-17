@@ -12,10 +12,11 @@
 
 const buttonEl = document.querySelector('button');
 const containerEl = document.querySelector('.container');
-
+let cellsNumber = 100;
+let cellList;
 
 buttonEl.addEventListener('click', function(){
-    let cellsNumber = 100;
+    
     gridGenerator(cellsNumber, containerEl);
     function gridGenerator(maxCellNumb, domEl){
         for (let i=0; i < maxCellNumb; i++){
@@ -26,7 +27,7 @@ buttonEl.addEventListener('click', function(){
             console.log(cellMarkup);        
         }
     }
-    
+
     let cellList = document.querySelectorAll('.cell');
     clickEvent(cellList)
     function clickEvent(cellListEl){
