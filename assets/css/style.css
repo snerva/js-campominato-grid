@@ -6,4 +6,24 @@
 
 body{
     background-color: cadetblue;
+    text-align: center;
+}
+
+button{
+    margin: 3rem 0;
+    padding: 0.5rem;
+    font-size: large;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 2rem auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cell{
+    width: calc(100% / 10);
+    aspect-ratio: 1/1;
+    border: 2px solid white;
 }
