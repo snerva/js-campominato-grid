@@ -12,25 +12,19 @@
 
 const buttonEl = document.querySelector('button');
 const containerEl = document.querySelector('.container');
-let cellsNumber = 100;
-let cellList;
+const cellsNumber = 100;
 
-buttonEl.addEventListener('click', function(){
-    
-    gridGenerator(cellsNumber, containerEl);
-    function gridGenerator(maxCellNumb, domEl){
+gridGenerator(cellsNumber, containerEl);
+function gridGenerator(maxCellNumb, domEl){
+    buttonEl.addEventListener('click', function(){
         for (let i=0; i < maxCellNumb; i++){
             const numb = i + 1;
             console.log(numb);
             const cellMarkup = `<div class="cell">${numb}</div>`;
-            domEl.innerHTML += cellMarkup;
-            console.log(cellMarkup);        
+            domEl.innerHTML += cellMarkup; 
+            console.log(cellMarkup);     
         }
-    }
-
-    let cellList = document.querySelectorAll('.cell');
-    clickEvent(cellList)
-    function clickEvent(cellListEl){
+        let cellListEl = document.querySelectorAll('.cell');
         for (let i=0; i < cellListEl.length; i++){
             let currentCell = cellListEl[i];
             console.log(currentCell);
@@ -40,6 +34,7 @@ buttonEl.addEventListener('click', function(){
                 console.log(currentNumb);
             })
         }
-    }    
-})
+    })
+} 
+    
 
